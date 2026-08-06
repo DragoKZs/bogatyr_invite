@@ -48,7 +48,7 @@ export default function About() {
             <img
               src="/images/about.jpg"
               alt="День шахтёра"
-              className="h-[680px] w-full rounded-[40px] object-cover shadow-2xl transition duration-700"
+              className="mx-auto h-[680px] max-w-[500px] rounded-[40px] object-cover"
             />
           </motion.div>
 
