@@ -14,7 +14,6 @@ export default function Header() {
     { title: t.header.menu[0], href: "#about" },
     { title: t.header.menu[1], href: "#program" },
     { title: t.header.menu[2], href: "#location" },
-    { title: t.header.menu[3], href: "#contacts" },
   ];
 
   const [mobileOpen, setMobileOpen] = useState(false);
