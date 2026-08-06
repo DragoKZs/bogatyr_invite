@@ -84,7 +84,7 @@ export default function Location() {
 
               <iframe
                 title="Карта"
-                src="https://www.google.com/maps/place/%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD+%D0%A8%D0%B0%D0%BD%D1%8B%D1%80%D0%B0%D0%BA/@51.7285944,75.3214469,17z/data=!3m1!4b1!4m6!3m5!1s0x42582b08ab880249:0xea6f77570ee59fdb!8m2!3d51.7285944!4d75.3240218!16s%2Fg%2F1tdhkc_v?hl=ru.&entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D"
+                src="https://maps.app.goo.gl/s7iBz8pUHGLr4ja89"
                 className="h-[500px] w-full border-0"
                 loading="lazy"
               />
