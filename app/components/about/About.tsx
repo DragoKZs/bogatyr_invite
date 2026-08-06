@@ -20,7 +20,7 @@ export default function About() {
         <div className="mt-20 grid gap-12 lg:grid-cols-2">
           <Reveal delay={0.2}>
             <img
-              src="/images/about.jpg"
+              src="/images/about.png"
               alt="О празднике"
               className="h-[500px] w-full rounded-3xl object-cover"
             />
