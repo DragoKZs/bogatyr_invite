@@ -54,8 +54,6 @@ export default function Registration() {
     try {
       setLoading(true);
 
-      console.log(form);
-
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
