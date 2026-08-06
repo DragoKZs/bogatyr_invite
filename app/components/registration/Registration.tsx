@@ -12,7 +12,7 @@ import {
 import { useLanguage } from "@/app/components/context/LanguageContext";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/library/d/1dgG3-gQ5GdHrbA88uu_jQyRuARadPlFr9Bm3tzvWqQ8hqXEzDHmZV98E/3";
+  "https://script.google.com/macros/s/AKfycbz7vO-HDhbIGoHMIz49gHTS6W6AlCiupRdTV0x6w8MioP2ydgLWK9wTl_3LFgpmrOZuTg/exec";
 
 export default function Registration() {
   const { t } = useLanguage();
