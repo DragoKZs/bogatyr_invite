@@ -78,7 +78,7 @@ export default function Welcome({ onEnter }: WelcomeProps) {
           </h1>
 
           <p className="mt-6 text-xl text-white/70">
-            30 августа 2026
+            27 августа 2026
           </p>
 
           <p className="mt-2 text-lg text-white/50">
