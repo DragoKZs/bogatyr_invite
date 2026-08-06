@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Calendar, Clock3, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden">
+
       {/* Видео */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
@@ -18,74 +19,158 @@ export default function Hero() {
       </video>
 
       {/* Затемнение */}
-      <div className="absolute inset-0 bg-black/5" />
+      <div className="absolute inset-0 bg-black/55" />
 
-      {/* Градиент */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-[#0b0d10]" />
+      {/* Синий градиент */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#021B33]/40 via-black/35 to-[#05070A]" />
 
-      {/* Контент */}
-      <div className="container relative z-10 text-center">
+      {/* Световое пятно */}
+      <div className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[180px]" />
 
-        <motion.span
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: .6 }}
-          className="mb-6 inline-block rounded-full border border-yellow-500/40 bg-yellow-500/10 px-6 py-2 uppercase tracking-[4px] text-yellow-400"
-        >
-          Богатырь Комир
-        </motion.span>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: .2,
-            duration: .8,
-          }}
-          className="mx-auto max-w-5xl text-5xl font-black uppercase leading-tight md:text-7xl xl:text-8xl"
-        >
-          Богатырь
-          <br />
-          Комир
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: .5,
-            duration: .8,
-          }}
-          className="mx-auto mt-10 max-w-2xl text-lg leading-8 text-white/80 md:text-xl"
-        >
-          Форум, объединяющий сотрудников,
-          молодых специалистов,
-          руководителей и экспертов
-          для обмена опытом,
-          новыми идеями
-          и совместного развития компании.
-        </motion.p>
+      <div className="container relative z-10">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: .8,
-            duration: .7,
-          }}
-          className="mt-16 flex flex-col items-center justify-center gap-5 sm:flex-row"
+          transition={{ duration: .8 }}
+          className="max-w-4xl"
         >
-          <a
-            href="#registration"
-            className="rounded-full bg-yellow-500 px-10 py-5 text-lg font-bold text-black transition hover:scale-105"
+
+          <span className="inline-flex rounded-full border border-blue-500/40 bg-blue-500/10 px-6 py-2 text-sm uppercase tracking-[4px] text-blue-300">
+            АО «БОГАТЫРЬ КӨМІР»
+          </span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: .2,
+              duration: .8,
+            }}
+            className="mt-8 text-6xl font-black uppercase leading-none md:text-8xl"
           >
-            Стать участником
-          </a>
+            День
+            <br />
+            шахтёра
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: .5,
+            }}
+            className="mt-10 max-w-2xl text-xl leading-9 text-white/80"
+          >
+            Приглашаем сотрудников
+            АО «Богатырь Көмір»
+            и членов их семей
+            на праздничное мероприятие,
+            посвящённое Дню шахтёра.
+          </motion.p>
+
+          {/* Карточки */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: .7,
+            }}
+            className="mt-14 grid gap-5 md:grid-cols-3"
+          >
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+
+              <Calendar
+                className="text-blue-400"
+                size={30}
+              />
+
+              <div className="mt-5 text-sm uppercase tracking-widest text-white/50">
+                Дата
+              </div>
+
+              <div className="mt-2 text-2xl font-bold">
+                27 августа
+              </div>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+
+              <Clock3
+                className="text-blue-400"
+                size={30}
+              />
+
+              <div className="mt-5 text-sm uppercase tracking-widest text-white/50">
+                Начало
+              </div>
+
+              <div className="mt-2 text-2xl font-bold">
+                18:00
+              </div>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+
+              <MapPin
+                className="text-blue-400"
+                size={30}
+              />
+
+              <div className="mt-5 text-sm uppercase tracking-widest text-white/50">
+                Место
+              </div>
+
+              <div className="mt-2 text-xl font-bold">
+                Maxi Mall
+              </div>
+
+            </div>
+
+          </motion.div>
+
+          {/* Кнопка */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 1,
+            }}
+            className="mt-14"
+          >
+
+            <a
+              href="#registration"
+              className="inline-flex items-center rounded-full bg-blue-600 px-10 py-5 text-lg font-bold transition duration-300 hover:scale-105 hover:bg-blue-500"
+            >
+              Подать заявку
+            </a>
+
+          </motion.div>
+
         </motion.div>
 
       </div>
 
-      {/* Scroll */}
+      {/* Скролл */}
+
       <motion.a
         href="#about"
         animate={{
@@ -99,9 +184,10 @@ export default function Hero() {
       >
         <ChevronDown
           size={42}
-          className="text-white/70"
+          className="text-white/60"
         />
       </motion.a>
+
     </section>
   );
 }
