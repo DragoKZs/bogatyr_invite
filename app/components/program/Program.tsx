@@ -1,105 +1,161 @@
-import Container from "../ui/Container";
-import Reveal from "../ui/Reveal";
-import SectionTitle from "../ui/SectionTitle";
-import { CalendarDays, Clock, MapPin } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  CalendarDays,
+  Clock3,
+  MapPin,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Program() {
   return (
-    <section id="program" className="bg-[#0b0d10] py-28">
-      <Container>
-        <Reveal>
-          <SectionTitle
-            overline="Программа"
-            title="Начало праздничного мероприятия"
-            text="Приглашаем вас принять участие в праздновании Дня шахтёра. Просим прибыть немного заранее, чтобы успеть пройти регистрацию и занять удобные места."
-            center
-          />
-        </Reveal>
+    <section
+      id="program"
+      className="relative py-28"
+    >
+      <div className="container">
 
-        <Reveal delay={0.2}>
-          <div className="mx-auto mt-16 max-w-5xl overflow-hidden rounded-[36px] border border-yellow-500/20 bg-gradient-to-br from-white/5 to-white/[0.02] p-12 backdrop-blur-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .8 }}
+          className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#071B33] via-[#0B111A] to-black"
+        >
 
-            <div className="flex flex-col items-center text-center">
+          <div className="grid lg:grid-cols-2">
 
-              <span className="rounded-full border border-yellow-500/30 bg-yellow-500/10 px-6 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-yellow-400">
-                День шахтёра 2026
+            {/* Левая часть */}
+
+            <div className="p-12 lg:p-16">
+
+              <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm uppercase tracking-[4px] text-blue-400">
+                Главное событие
               </span>
 
-              <h3 className="mt-10 text-7xl font-black text-yellow-400 md:text-8xl">
-                18:00
-              </h3>
+              <h2 className="mt-8 text-5xl font-black uppercase leading-tight">
+                День
+                <br />
+                шахтёра
+              </h2>
 
-              <h4 className="mt-8 text-3xl font-bold md:text-4xl">
-                Торжественное открытие
-              </h4>
+              <p className="mt-8 max-w-xl text-lg leading-9 text-white/70">
+                Мы будем рады видеть Вас
+                на праздничном мероприятии,
+                посвящённом Дню шахтёра.
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70">
-                Мы будем рады видеть вас на праздничном мероприятии,
-                посвящённом Дню шахтёра,
-                впереди насыщенная программа,
-                концерт и праздничная атмосфера.
+                <br />
+                <br />
+
+                Вас ждут праздничная атмосфера,
+                концертная программа,
+                развлечения и отдых
+                в кругу коллег и семьи.
               </p>
 
             </div>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {/* Правая часть */}
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition hover:border-yellow-500/40 hover:bg-white/10">
+            <div className="flex items-center justify-center bg-white/5 p-12">
 
-                <CalendarDays
-                  className="mx-auto text-yellow-400"
-                  size={34}
-                />
+              <div className="w-full max-w-md space-y-6">
 
-                <h5 className="mt-5 text-lg font-bold">
-                  Дата
-                </h5>
+                <div className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl">
 
-                <p className="mt-2 text-white/70">
-                  27 августа 2026
-                </p>
+                  <div className="flex items-center gap-5">
 
-              </div>
+                    <CalendarDays
+                      size={34}
+                      className="text-blue-400"
+                    />
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition hover:border-yellow-500/40 hover:bg-white/10">
+                    <div>
 
-                <Clock
-                  className="mx-auto text-yellow-400"
-                  size={34}
-                />
+                      <div className="text-sm uppercase tracking-[3px] text-white/50">
+                        Дата
+                      </div>
 
-                <h5 className="mt-5 text-lg font-bold">
-                  Время начала
-                </h5>
+                      <div className="mt-2 text-3xl font-bold">
+                        30 августа
+                      </div>
 
-                <p className="mt-2 text-white/70">
-                  18:00
-                </p>
+                    </div>
 
-              </div>
+                  </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition hover:border-yellow-500/40 hover:bg-white/10">
+                </div>
 
-                <MapPin
-                  className="mx-auto text-yellow-400"
-                  size={34}
-                />
+                <div className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl">
 
-                <h5 className="mt-5 text-lg font-bold">
-                  Место
-                </h5>
+                  <div className="flex items-center gap-5">
 
-                <p className="mt-2 text-white/70">
-                  ТРЦ Maxi Mall, 4 этаж, ресторан Шанырак
-                </p>
+                    <Clock3
+                      size={34}
+                      className="text-blue-400"
+                    />
+
+                    <div>
+
+                      <div className="text-sm uppercase tracking-[3px] text-white/50">
+                        Начало
+                      </div>
+
+                      <div className="mt-2 text-3xl font-bold">
+                        15:00
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl">
+
+                  <div className="flex items-center gap-5">
+
+                    <MapPin
+                      size={34}
+                      className="text-blue-400"
+                    />
+
+                    <div>
+
+                      <div className="text-sm uppercase tracking-[3px] text-white/50">
+                        Место проведения
+                      </div>
+
+                      <div className="mt-2 text-2xl font-bold">
+                        Maxi Mall
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <a
+                  href="#registration"
+                  className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-blue-600 py-5 text-lg font-bold transition hover:bg-blue-500"
+                >
+                  Подать заявку
+
+                  <ArrowRight size={22} />
+
+                </a>
 
               </div>
 
             </div>
 
           </div>
-        </Reveal>
-      </Container>
+
+        </motion.div>
+
+      </div>
     </section>
   );
 }
