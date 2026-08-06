@@ -72,7 +72,7 @@ export default function Registration() {
         <Reveal>
 
           <SectionTitle
-            overline="Регистрация"
+            overline="Вы подтверждаете, что явитесь на мероприятие"
             title="Подайте заявку"
             text="Заполните три поля и нажмите кнопку."
             center

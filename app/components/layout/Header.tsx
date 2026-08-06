@@ -9,7 +9,7 @@ const navigation = [
     { title: "О празднике", href: "#about" },
     { title: "Программа", href: "#program" },
     { title: "Место проведения", href: "#location" },
-    { title: "Регистрация", href: "#registration" },
+    { title: "Оставить заявку", href: "#registration" },
 ];
 
 export default function Header() {
