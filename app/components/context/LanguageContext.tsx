@@ -120,7 +120,7 @@ const translations = {
             department: "Подразделение",
             departmentPlaceholder: "Введите подразделение",
 
-            button: "Подать заявку",
+            button: "Принять приглашение",
 
             loading: "Отправка...",
 
@@ -147,6 +147,19 @@ const translations = {
             company: "БОГАТЫРЬ КӨМІР",
 
             copyright: "© 2026 АО «Богатырь Көмір»",
+        },
+        header: {
+            company: "АО «Богатырь Көмір»",
+            title: "День шахтёра",
+
+            menu: [
+                "О празднике",
+                "Программа",
+                "Место",
+                "Контакты",
+            ],
+
+            button: "Принять приглашение",
         },
     },
 
@@ -222,7 +235,7 @@ const translations = {
             placeTitle: "Өтетін орны",
             place: "Maxi Mall СОО, 4 қабат",
 
-            button: "Қатысуды растау",
+            button: "Шақыруды қабылдау",
         },
         location: {
             badge: "Өтетін орны",
@@ -261,7 +274,7 @@ const translations = {
             department: "Бөлімше",
             departmentPlaceholder: "Бөлімшеңізді енгізіңіз",
 
-            button: "Қатысуды растау",
+            button: "Шақыруды қабылдау",
 
             loading: "Жіберілуде...",
 
@@ -288,6 +301,19 @@ const translations = {
             company: "БОГАТЫРЬ КӨМІР",
 
             copyright: "© 2026 «Богатырь Көмір» АҚ",
+        },
+        header: {
+            company: "«Богатырь Көмір» АҚ",
+            title: "Кеншілер күні",
+
+            menu: [
+                "Мереке туралы",
+                "Бағдарлама",
+                "Өтетін орны",
+                "Байланыс",
+            ],
+
+            button: "Қатысуды растау",
         },
     },
 };

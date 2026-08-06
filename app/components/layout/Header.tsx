@@ -5,14 +5,18 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const navigation = [
-  { title: "О празднике", href: "#about" },
-  { title: "Программа", href: "#program" },
-  { title: "Место", href: "#location" },
-  { title: "Контакты", href: "#contacts" },
-];
+import { useLanguage } from "@/app/components/context/LanguageContext";
 
 export default function Header() {
+  const { t } = useLanguage();
+
+  const navigation = [
+    { title: t.header.menu[0], href: "#about" },
+    { title: t.header.menu[1], href: "#program" },
+    { title: t.header.menu[2], href: "#location" },
+    { title: t.header.menu[3], href: "#contacts" },
+  ];
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,8 +39,6 @@ export default function Header() {
       >
         <div className="container flex h-24 items-center justify-between">
 
-          {/* Логотип */}
-
           <Link
             href="/"
             className="flex items-center gap-4"
@@ -50,18 +52,16 @@ export default function Header() {
             <div>
 
               <div className="text-xs uppercase tracking-[5px] text-blue-400">
-                АО «Богатырь Көмір»
+                {t.header.company}
               </div>
 
               <div className="text-xl font-black uppercase tracking-[3px]">
-                День шахтёра
+                {t.header.title}
               </div>
 
             </div>
 
           </Link>
-
-          {/* Desktop */}
 
           <nav className="hidden items-center gap-10 lg:flex">
 
@@ -79,12 +79,10 @@ export default function Header() {
               href="#registration"
               className="rounded-full bg-blue-600 px-7 py-3 font-semibold transition hover:bg-blue-500"
             >
-              Подать заявку
+              {t.header.button}
             </a>
 
           </nav>
-
-          {/* Mobile */}
 
           <button
             onClick={() => setMobileOpen(true)}
@@ -118,7 +116,7 @@ export default function Header() {
                 />
 
                 <span className="font-bold uppercase">
-                  День шахтёра
+                  {t.header.title}
                 </span>
 
               </div>
@@ -149,7 +147,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="mt-10 rounded-full bg-blue-600 px-10 py-5 text-xl font-bold"
               >
-                Подать заявку
+                {t.header.button}
               </a>
 
             </div>
