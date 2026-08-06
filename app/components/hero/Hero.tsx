@@ -76,17 +76,10 @@ export default function Hero() {
           className="mt-16 flex flex-col items-center justify-center gap-5 sm:flex-row"
         >
           <a
-            href="#about"
+            href="#registration"
             className="rounded-full bg-yellow-500 px-10 py-5 text-lg font-bold text-black transition hover:scale-105"
           >
             Стать участником
-          </a>
-
-          <a
-            href="#program"
-            className="rounded-full border border-white/30 px-10 py-5 text-lg transition hover:bg-white hover:text-black"
-          >
-            Программа форума
           </a>
         </motion.div>
 
