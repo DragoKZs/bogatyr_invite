@@ -6,11 +6,10 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navigation = [
-    { title: "Приглашение", href: "#about" },
+    { title: "О празднике", href: "#about" },
     { title: "Программа", href: "#program" },
     { title: "Место проведения", href: "#location" },
     { title: "Регистрация", href: "#registration" },
-    { title: "Контакты", href: "#contacts" },
 ];
 
 export default function Header() {
