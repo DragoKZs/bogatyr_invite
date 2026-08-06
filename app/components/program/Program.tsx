@@ -8,11 +8,29 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+const info = [
+  {
+    icon: CalendarDays,
+    title: "Дата",
+    value: "30 августа 2026",
+  },
+  {
+    icon: Clock3,
+    title: "Начало мероприятия",
+    value: "15:00",
+  },
+  {
+    icon: MapPin,
+    title: "Место проведения",
+    value: "ТРЦ Maxi Mall",
+  },
+];
+
 export default function Program() {
   return (
     <section
       id="program"
-      className="relative py-28"
+      className="relative py-32"
     >
       <div className="container">
 
@@ -21,37 +39,39 @@ export default function Program() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: .8 }}
-          className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#071B33] via-[#0B111A] to-black"
+          className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#071B33] via-[#0B111A] to-black shadow-2xl"
         >
 
           <div className="grid lg:grid-cols-2">
 
             {/* Левая часть */}
 
-            <div className="p-12 lg:p-16">
+            <div className="flex flex-col justify-center p-12 lg:p-16">
 
-              <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm uppercase tracking-[4px] text-blue-400">
+              <span className="w-fit rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm uppercase tracking-[4px] text-blue-400">
                 Главное событие
               </span>
 
-              <h2 className="mt-8 text-5xl font-black uppercase leading-tight">
-                День
-                <br />
-                шахтёра
+              <h2 className="mt-8 text-5xl font-black leading-tight">
+                День шахтёра
               </h2>
 
-              <p className="mt-8 max-w-xl text-lg leading-9 text-white/70">
-                Мы будем рады видеть Вас
+              <div className="mt-8 h-[2px] w-28 rounded-full bg-blue-500" />
+
+              <p className="mt-10 max-w-xl text-lg leading-9 text-white/70">
+                Мы будем рады приветствовать Вас
                 на праздничном мероприятии,
                 посвящённом Дню шахтёра.
 
                 <br />
                 <br />
 
-                Вас ждут праздничная атмосфера,
-                концертная программа,
-                развлечения и отдых
-                в кругу коллег.
+                Вас ждут концертная программа,
+                праздничная атмосфера,
+                встречи с коллегами,
+                яркие впечатления
+                и отличный вечер
+                в кругу друзей.
               </p>
 
             </div>
@@ -62,90 +82,62 @@ export default function Program() {
 
               <div className="w-full max-w-md space-y-6">
 
-                <div className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl">
+                {info.map((item) => {
+                  const Icon = item.icon;
 
-                  <div className="flex items-center gap-5">
+                  return (
+                    <motion.div
+                      key={item.title}
+                      whileHover={{
+                        y: -6,
+                        scale: 1.02,
+                      }}
+                      transition={{
+                        duration: .2,
+                      }}
+                      className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl"
+                    >
 
-                    <CalendarDays
-                      size={34}
-                      className="text-blue-400"
-                    />
+                      <div className="flex items-center gap-5">
 
-                    <div>
+                        <Icon
+                          size={36}
+                          className="text-blue-400"
+                        />
 
-                      <div className="text-sm uppercase tracking-[3px] text-white/50">
-                        Дата
+                        <div>
+
+                          <div className="text-sm uppercase tracking-[3px] text-white/50">
+                            {item.title}
+                          </div>
+
+                          <div className="mt-2 text-3xl font-bold">
+                            {item.value}
+                          </div>
+
+                        </div>
+
                       </div>
 
-                      <div className="mt-2 text-3xl font-bold">
-                        30 августа
-                      </div>
+                    </motion.div>
+                  );
+                })}
 
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl">
-
-                  <div className="flex items-center gap-5">
-
-                    <Clock3
-                      size={34}
-                      className="text-blue-400"
-                    />
-
-                    <div>
-
-                      <div className="text-sm uppercase tracking-[3px] text-white/50">
-                        Начало
-                      </div>
-
-                      <div className="mt-2 text-3xl font-bold">
-                        15:00
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-black/30 p-7 backdrop-blur-xl">
-
-                  <div className="flex items-center gap-5">
-
-                    <MapPin
-                      size={34}
-                      className="text-blue-400"
-                    />
-
-                    <div>
-
-                      <div className="text-sm uppercase tracking-[3px] text-white/50">
-                        Место проведения
-                      </div>
-
-                      <div className="mt-2 text-2xl font-bold">
-                        Maxi Mall
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <a
+                <motion.a
+                  whileHover={{
+                    scale: 1.03,
+                  }}
+                  whileTap={{
+                    scale: .98,
+                  }}
                   href="#registration"
-                  className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-blue-600 py-5 text-lg font-bold transition hover:bg-blue-500"
+                  className="mt-6 flex items-center justify-center gap-3 rounded-2xl bg-blue-600 py-5 text-lg font-bold transition hover:bg-blue-500"
                 >
                   Подать заявку
 
                   <ArrowRight size={22} />
 
-                </a>
+                </motion.a>
 
               </div>
 

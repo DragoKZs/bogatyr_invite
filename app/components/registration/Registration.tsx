@@ -82,7 +82,7 @@ export default function Registration() {
             </span>
 
             <h2 className="mt-8 text-5xl font-black uppercase">
-              Подать заявку
+              Подтвердите участие
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
@@ -209,7 +209,7 @@ export default function Registration() {
                       Отправка...
                     </>
                   ) : (
-                    "Подать заявку"
+                    "Подтвердите участие"
                   )}
                 </button>
 
