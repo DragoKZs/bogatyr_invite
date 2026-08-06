@@ -11,7 +11,7 @@ export default function Program() {
           <SectionTitle
             overline="Программа"
             title="Начало праздничного мероприятия"
-            text="Приглашаем вас принять участие в праздновании Дня шахтёра. Просим прибыть немного заранее, чтобы успеть пройти регистрацию и занять удобные места."
+            text="Приглашаем вас принять участие в праздновании Дня шахтёра."
             center
           />
         </Reveal>
@@ -26,7 +26,7 @@ export default function Program() {
               </span>
 
               <h3 className="mt-10 text-7xl font-black text-yellow-400 md:text-8xl">
-                15:00
+                18:00
               </h3>
 
               <h4 className="mt-8 text-3xl font-bold md:text-4xl">
@@ -35,8 +35,7 @@ export default function Program() {
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70">
                 Мы будем рады видеть вас на праздничном мероприятии,
-                посвящённом Дню шахтёра.
-                Приходите вместе с семьёй и коллегами —
+                посвящённом Дню шахтёра,
                 впереди насыщенная программа,
                 концерт и праздничная атмосфера.
               </p>
@@ -57,7 +56,7 @@ export default function Program() {
                 </h5>
 
                 <p className="mt-2 text-white/70">
-                  30 августа 2026
+                  27 августа 2026
                 </p>
 
               </div>
@@ -74,7 +73,7 @@ export default function Program() {
                 </h5>
 
                 <p className="mt-2 text-white/70">
-                  15:00
+                  18:00
                 </p>
 
               </div>
@@ -91,7 +90,7 @@ export default function Program() {
                 </h5>
 
                 <p className="mt-2 text-white/70">
-                  Площадка проведения праздника
+                  ТРЦ "Maxi Mall", 4 этаж, ресторан "Шанырак"
                 </p>
 
               </div>
