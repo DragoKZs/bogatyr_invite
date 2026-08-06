@@ -84,7 +84,7 @@ export default function Location() {
 
               <iframe
                 title="Карта"
-                src="https://www.google.com/maps?q=Ekibastuz&output=embed"
+                src="https://yandex.kz/maps/org/shanyrak/103321077316/?indoorLevel=1&ll=75.324240%2C51.728537&source=serp_navig&z=17.06"
                 className="h-[500px] w-full border-0"
                 loading="lazy"
               />
