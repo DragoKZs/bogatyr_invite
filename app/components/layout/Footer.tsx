@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { ChevronUp } from "lucide-react";
 import Container from "../ui/Container";
+import { useLanguage } from "@/app/components/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-white/10 bg-gradient-to-b from-[#05070A] to-black">
 
@@ -12,45 +15,31 @@ export default function Footer() {
 
         <div className="py-20 text-center">
 
-          {/* Логотип */}
-
           <img
             src="/images/logo.svg"
             alt="Богатырь Көмір"
             className="mx-auto h-20 w-auto"
           />
 
-          {/* Заголовок */}
-
           <h2 className="mt-8 text-4xl font-black uppercase md:text-5xl">
-            До встречи
-            <br />
-            на празднике!
+            {t.footer.title}
           </h2>
 
           <div className="mx-auto mt-8 h-[2px] w-32 rounded-full bg-blue-500" />
-
-          {/* Информация */}
 
           <div className="mt-10 space-y-3 text-lg text-white/70">
 
             <p>
               <span className="font-semibold text-white">
-                30 августа 2026
+                {t.footer.date}
               </span>
             </p>
 
-            <p>
-              Ресторан «Шаңырақ»
-            </p>
+            <p>{t.footer.place}</p>
 
-            <p>
-              Начало мероприятия — 15:00
-            </p>
+            <p>{t.footer.time}</p>
 
           </div>
-
-          {/* Кнопка наверх */}
 
           <a
             href="#top"
@@ -58,11 +47,9 @@ export default function Footer() {
           >
             <ChevronUp size={20} />
 
-            Наверх
+            {t.footer.top}
 
           </a>
-
-          {/* Нижняя часть */}
 
           <div className="mt-16 border-t border-white/10 pt-8">
 
@@ -70,11 +57,11 @@ export default function Footer() {
               href="/"
               className="text-xl font-black tracking-[4px]"
             >
-              БОГАТЫРЬ КӨМІР
+              {t.footer.company}
             </Link>
 
             <p className="mt-4 text-sm text-white/40">
-              © 2026 АО «Богатырь Көмір»
+              {t.footer.copyright}
             </p>
 
           </div>
