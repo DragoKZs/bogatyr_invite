@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Manrope } from "next/font/google";
 
+import { LanguageProvider } from "./components/context/LanguageContext";
+
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
 });
@@ -18,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={manrope.className}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

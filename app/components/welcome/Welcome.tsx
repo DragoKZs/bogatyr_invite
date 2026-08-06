@@ -1,13 +1,18 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { useLanguage } from "@/app/components/context/LanguageContext";
 
 interface WelcomeProps {
   onEnter: () => void;
 }
 
 export default function Welcome({ onEnter }: WelcomeProps) {
-  function handleEnter() {
+  const { setLanguage, t } = useLanguage();
+
+  function handleEnter(language: "ru" | "kz") {
+    setLanguage(language);
+
     const audio = new Audio("/audio/theme.mp3");
 
     audio.volume = 0.4;
@@ -63,13 +68,13 @@ export default function Welcome({ onEnter }: WelcomeProps) {
           />
 
           <p className="mt-8 text-sm uppercase tracking-[8px] text-blue-300">
-            АО «Богатырь Көмір»
+            {t.welcome.company}
           </p>
 
           <div className="mx-auto mt-8 h-px w-40 bg-blue-500/60" />
 
           <h1 className="mt-10 text-5xl font-black uppercase">
-            День шахтёра
+            {t.welcome.title}
           </h1>
 
           <p className="mt-6 text-xl text-white/70">
@@ -77,33 +82,43 @@ export default function Welcome({ onEnter }: WelcomeProps) {
           </p>
 
           <p className="mt-2 text-lg text-white/50">
-            г. Экибастуз
+            {t.welcome.city}
           </p>
 
           <div className="mx-auto mt-10 h-px w-40 bg-blue-500/60" />
 
           <p className="mt-10 text-2xl font-light">
-            Добро пожаловать!
+            {t.welcome.welcome}
           </p>
 
           <p className="mx-auto mt-6 max-w-lg leading-8 text-white/70">
-            Для просмотра официального приглашения
-            на праздничное мероприятие
-            нажмите кнопку ниже.
+            {t.welcome.text}
           </p>
 
-          <motion.button
-            whileHover={{
-              scale: 1.04,
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            onClick={handleEnter}
-            className="mt-14 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 px-14 py-5 text-lg font-bold shadow-[0_15px_40px_rgba(37,99,235,.35)] transition"
-          >
-            Принять приглашение
-          </motion.button>
+          {/* Кнопки выбора языка */}
+
+          <div className="mt-14 flex flex-col justify-center gap-4 sm:flex-row">
+
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleEnter("ru")}
+              className="rounded-full bg-gradient-to-r from-blue-700 to-blue-500 px-10 py-5 text-lg font-bold shadow-[0_15px_40px_rgba(37,99,235,.35)] transition"
+            >
+              🇷🇺 Русский
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleEnter("kz")}
+              className="rounded-full border border-blue-500/40 bg-white/5 px-10 py-5 text-lg font-bold transition hover:bg-white/10"
+            >
+              🇰🇿 Қазақша
+            </motion.button>
+
+          </div>
+
         </motion.div>
       </motion.div>
     </AnimatePresence>
