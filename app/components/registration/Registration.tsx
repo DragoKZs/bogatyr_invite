@@ -12,7 +12,7 @@ import {
 import { useLanguage } from "@/app/components/context/LanguageContext";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/library/d/1dgG3-gQ5GdHrbA88uu_jQyRuARadPlFr9Bm3tzvWqQ8hqXEzDHmZV98E/4";
+  "https://script.google.com/macros/s/AKfycbz7vO-HDhbIGoHMIz49gHTS6W6AlCiupRdTV0x6w8MioP2ydgLWK9wTl_3LFgpmrOZuTg/exec";
 
 export default function Registration() {
   const { t } = useLanguage();
@@ -194,7 +194,7 @@ export default function Registration() {
                       <input
                         type="radio"
                         name="attendance"
-                        value="confirm"
+                        value="Сможет"
                         checked={form.attendance === "Сможет"}
                         onChange={handleChange}
                         className="mt-1 h-5 w-5 accent-blue-500"
@@ -216,7 +216,7 @@ export default function Registration() {
                       <input
                         type="radio"
                         name="attendance"
-                        value="decline"
+                        value="Не сможет"
                         checked={form.attendance === "Не сможет"}
                         onChange={handleChange}
                         className="mt-1 h-5 w-5 accent-blue-500"
