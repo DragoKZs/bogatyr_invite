@@ -34,7 +34,7 @@ export default function Program() {
   return (
     <section
       id="program"
-      className="relative py-32"
+      className="relative py-16 md:py-28"
     >
       <div className="container">
 
@@ -43,7 +43,7 @@ export default function Program() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: .8 }}
-          className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#071B33] via-[#0B111A] to-black shadow-2xl"
+          className="overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#071B33] via-[#0B111A] to-black md:rounded-[40px] shadow-2xl"
         >
 
           <div className="grid lg:grid-cols-2">

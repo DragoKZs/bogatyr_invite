@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
       {/* Видео */}
       <video
         autoPlay
@@ -38,19 +38,19 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="mx-auto mb-12 h-28 w-auto"
+            className="mx-auto mb-8 h-16 w-auto md:mb-12 md:h-28"
           />
 
           <p
-            className="mb-10 text-5xl italic text-white md:text-7xl"
+            className="mb-6 text-3xl italic text-white md:mb-10 md:text-7xl"
             style={{ fontFamily: "Georgia, serif" }}
           >
             {t.hero.title}
           </p>
 
-          <div className="mx-auto mb-12 h-[2px] w-56 rounded-full bg-blue-500" />
+          <div className="mx-auto mb-8 h-[2px] w-36 rounded-full bg-blue-500 md:mb-12 md:w-56" />
 
-          <h1 className="text-3xl font-light leading-relaxed text-white md:text-5xl">
+          <h1 className="text-2xl font-light leading-relaxed text-white md:text-5xl">
             {t.hero.invitation}
             <br />
             {t.hero.invitation2}
@@ -61,7 +61,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-16 max-w-2xl text-xl leading-10 text-white/80">
+          <p className="mx-auto mt-10 max-w-2xl px-2 text-base leading-8 text-white/80 md:mt-16 md:px-0 md:text-xl md:leading-10">
             {t.hero.text1}
 
             <br />
@@ -80,7 +80,7 @@ export default function Hero() {
           repeat: Infinity,
           duration: 2,
         }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 md:bottom-10"
       >
         <ChevronDown
           size={44}
