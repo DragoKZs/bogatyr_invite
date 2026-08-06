@@ -54,6 +54,8 @@ export default function Registration() {
     try {
       setLoading(true);
 
+      console.log(form);
+
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
@@ -186,8 +188,8 @@ export default function Registration() {
 
                     <label
                       className={`flex cursor-pointer items-start gap-4 rounded-2xl border p-5 transition-all ${form.attendance === "confirm"
-                          ? "border-blue-500 bg-blue-500/10"
-                          : "border-white/10 bg-[#0E1117] hover:border-blue-500"
+                        ? "border-blue-500 bg-blue-500/10"
+                        : "border-white/10 bg-[#0E1117] hover:border-blue-500"
                         }`}
                     >
 
@@ -208,8 +210,8 @@ export default function Registration() {
 
                     <label
                       className={`flex cursor-pointer items-start gap-4 rounded-2xl border p-5 transition-all ${form.attendance === "decline"
-                          ? "border-blue-500 bg-blue-500/10"
-                          : "border-white/10 bg-[#0E1117] hover:border-blue-500"
+                        ? "border-blue-500 bg-blue-500/10"
+                        : "border-white/10 bg-[#0E1117] hover:border-blue-500"
                         }`}
                     >
 
