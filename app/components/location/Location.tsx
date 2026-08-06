@@ -7,7 +7,11 @@ import {
   Clock3,
 } from "lucide-react";
 
+import { useLanguage } from "@/app/components/context/LanguageContext";
+
 export default function Location() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="location"
@@ -15,25 +19,20 @@ export default function Location() {
     >
       <div className="container">
 
-        {/* Заголовок */}
-
         <div className="mb-20 text-center">
 
           <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm uppercase tracking-[4px] text-blue-400">
-            Место проведения
+            {t.location.badge}
           </span>
 
           <h2 className="mt-8 text-5xl font-black">
-            Ждём Вас на празднике
+            {t.location.title}
           </h2>
 
           <div className="mx-auto mt-8 h-[2px] w-32 rounded-full bg-blue-500" />
 
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white/70">
-            Праздничное мероприятие состоится
-            в ресторане <span className="font-semibold text-white">«Шаңырақ»</span>.
-            Ниже Вы можете ознакомиться с местом проведения
-            и построить маршрут одним нажатием.
+            {t.location.text}
           </p>
 
         </div>
@@ -76,13 +75,13 @@ export default function Location() {
             />
 
             <h3 className="mt-6 text-3xl font-bold">
-              Ресторан «Шаңырақ»
+              {t.location.restaurant}
             </h3>
 
             <p className="mt-6 text-lg leading-8 text-white/70">
-              ТРЦ <span className="font-semibold text-white">Maxi Mall</span>
+              {t.location.address}
               <br />
-              г. Экибастуз
+              {t.location.city}
             </p>
 
             <div className="my-10 h-px bg-white/10" />
@@ -97,11 +96,11 @@ export default function Location() {
               <div>
 
                 <div className="text-sm uppercase tracking-[3px] text-white/50">
-                  Начало мероприятия
+                  {t.location.start}
                 </div>
 
                 <div className="mt-2 text-2xl font-bold">
-                  30 августа • 15:00
+                  {t.location.datetime}
                 </div>
 
               </div>
@@ -123,7 +122,7 @@ export default function Location() {
 
               <Navigation size={22} />
 
-              Построить маршрут
+              {t.location.button}
 
             </motion.a>
 

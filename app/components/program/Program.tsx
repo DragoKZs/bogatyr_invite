@@ -8,25 +8,29 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const info = [
-  {
-    icon: CalendarDays,
-    title: "Дата",
-    value: "30 августа 2026",
-  },
-  {
-    icon: Clock3,
-    title: "Начало мероприятия",
-    value: "15:00",
-  },
-  {
-    icon: MapPin,
-    title: "Место проведения",
-    value: "ТРЦ Maxi Mall",
-  },
-];
+import { useLanguage } from "@/app/components/context/LanguageContext";
 
 export default function Program() {
+  const { t } = useLanguage();
+
+  const info = [
+    {
+      icon: CalendarDays,
+      title: t.program.dateTitle,
+      value: t.program.date,
+    },
+    {
+      icon: Clock3,
+      title: t.program.timeTitle,
+      value: t.program.time,
+    },
+    {
+      icon: MapPin,
+      title: t.program.placeTitle,
+      value: t.program.place,
+    },
+  ];
+
   return (
     <section
       id="program"
@@ -49,29 +53,22 @@ export default function Program() {
             <div className="flex flex-col justify-center p-12 lg:p-16">
 
               <span className="w-fit rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm uppercase tracking-[4px] text-blue-400">
-                Главное событие
+                {t.program.badge}
               </span>
 
               <h2 className="mt-8 text-5xl font-black leading-tight">
-                День шахтёра
+                {t.program.title}
               </h2>
 
               <div className="mt-8 h-[2px] w-28 rounded-full bg-blue-500" />
 
               <p className="mt-10 max-w-xl text-lg leading-9 text-white/70">
-                Мы будем рады приветствовать Вас
-                на праздничном мероприятии,
-                посвящённом Дню шахтёра.
+                {t.program.text}
 
                 <br />
                 <br />
 
-                Вас ждут концертная программа,
-                праздничная атмосфера,
-                встречи с коллегами,
-                яркие впечатления
-                и отличный вечер
-                в кругу друзей.
+                {t.program.text2}
               </p>
 
             </div>
@@ -133,7 +130,7 @@ export default function Program() {
                   href="#registration"
                   className="mt-6 flex items-center justify-center gap-3 rounded-2xl bg-blue-600 py-5 text-lg font-bold transition hover:bg-blue-500"
                 >
-                  Подать заявку
+                  {t.program.button}
 
                   <ArrowRight size={22} />
 
