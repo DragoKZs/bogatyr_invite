@@ -132,6 +132,14 @@ const translations = {
             validation: "Заполните все поля.",
 
             error: "Ошибка отправки.",
+
+            attendanceTitle: "Подтверждение участия",
+
+            attendanceConfirm:
+                "С радостью подтверждаю своё участие.",
+
+            attendanceDecline:
+                "К сожалению, не смогу принять участие.",
         },
         footer: {
             title: "До встречи на празднике!",
@@ -286,6 +294,14 @@ const translations = {
             validation: "Барлық өрістерді толтырыңыз.",
 
             error: "Жіберу кезінде қате орын алды.",
+
+            attendanceTitle: "Қатысуды растау",
+
+            attendanceConfirm:
+                "Қуана қатысатынымды растаймын.",
+
+            attendanceDecline:
+                "Өкінішке қарай, қатыса алмаймын.",
         },
         footer: {
             title: "Мерекеде кездескенше!",

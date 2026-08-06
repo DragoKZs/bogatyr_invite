@@ -21,6 +21,7 @@ export default function Registration() {
     fullname: "",
     position: "",
     department: "",
+    attendance: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -43,7 +44,8 @@ export default function Registration() {
     if (
       !form.fullname ||
       !form.position ||
-      !form.department
+      !form.department ||
+      !form.attendance
     ) {
       alert(t.registration.validation);
       return;
@@ -67,6 +69,7 @@ export default function Registration() {
         fullname: "",
         position: "",
         department: "",
+        attendance: "",
       });
     } catch {
       alert(t.registration.error);
@@ -170,6 +173,64 @@ export default function Registration() {
                     </div>
                   );
                 })}
+
+                <div>
+
+                  <label className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[3px] text-white/60">
+
+                    {t.registration.attendanceTitle}
+
+                  </label>
+
+                  <div className="space-y-4">
+
+                    <label
+                      className={`flex cursor-pointer items-start gap-4 rounded-2xl border p-5 transition-all ${form.attendance === "confirm"
+                          ? "border-blue-500 bg-blue-500/10"
+                          : "border-white/10 bg-[#0E1117] hover:border-blue-500"
+                        }`}
+                    >
+
+                      <input
+                        type="radio"
+                        name="attendance"
+                        value="confirm"
+                        checked={form.attendance === "Сможет"}
+                        onChange={handleChange}
+                        className="mt-1 h-5 w-5 accent-blue-500"
+                      />
+
+                      <span className="leading-7">
+                        {t.registration.attendanceConfirm}
+                      </span>
+
+                    </label>
+
+                    <label
+                      className={`flex cursor-pointer items-start gap-4 rounded-2xl border p-5 transition-all ${form.attendance === "decline"
+                          ? "border-blue-500 bg-blue-500/10"
+                          : "border-white/10 bg-[#0E1117] hover:border-blue-500"
+                        }`}
+                    >
+
+                      <input
+                        type="radio"
+                        name="attendance"
+                        value="decline"
+                        checked={form.attendance === "Не сможет"}
+                        onChange={handleChange}
+                        className="mt-1 h-5 w-5 accent-blue-500"
+                      />
+
+                      <span className="leading-7">
+                        {t.registration.attendanceDecline}
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
 
                 <button
                   type="submit"
